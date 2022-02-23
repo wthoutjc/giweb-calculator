@@ -8,10 +8,18 @@
   --darkDesaturatedBlue-mainBckground: hsl(222, 26%, 31%);
   --darkDesaturatedBlue-tggleKeypad: hsl(223, 31%, 20%);
   --darkDesaturatedBlue-screenBckground: hsl(224, 36%, 15%);
+  /*backgroundButtons*/
+  --desaturatedDarkBlueBTN: hsl(225, 21%, 49%);
+  --redBTN: hsl(6, 63%, 50%);
+  --lightGrayishOrangeBTN: hsl(30, 25%, 89%);
   /*Text*/
   --darkGrayishBlue: hsl(221, 14%, 31%);
   /*Font*/
   --spartanFont: 'Spartan', sans-serif;
+  /*Border bottom*/
+  --grayishOrangeBB: hsl(28, 16%, 65%);
+  --desaturatedDarkBlueBB: hsl(224, 28%, 35%);
+  --darkRedBB: hsl(6, 70%, 34%);
 }
 #root {
   width: 100vw;
@@ -41,6 +49,28 @@
   color: Var(--darkGrayishBlue);
 }
 
+/*Border Bottoms*/
+.border-bottom-theme1-key0 {
+  border-bottom: 5px solid var(--grayishOrangeBB) !important;
+}
+.border-bottom-theme1-key1 {
+  border-bottom: 5px solid var(--desaturatedDarkBlueBB) !important;
+}
+.border-bottom-theme1-key2 {
+  border-bottom: 5px solid var(--darkRedBB) !important;
+}
+
+/*BACKGROUND BUTTONS*/
+.btn-back-theme10 {
+  background-color: var(--lightGrayishOrangeBTN);
+}
+.btn-back-theme11 {
+  background-color: var(--desaturatedDarkBlueBTN);
+}
+.btn-back-theme12 {
+  background-color: var(--redBTN);
+}
+
 .calculator-container {
   max-width: 1440px;
   width: 100%;
@@ -60,21 +90,54 @@
 .header {
   width: 100%;
   height: 15%;
-  background-color: black;
   display: flex;
   justify-content: space-between;
 }
-.header .theme {
+.header .calc {
+  width: 40%;
+  height: 100%;
   display: flex;
+  align-items: center;
+}
+.header .theme {
+  width: 25%;
+  display: flex;
+}
+.header .theme .title-theme {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 .header .theme .switch-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .header .theme .numbers {
+  width: 73%;
   display: flex;
+  justify-content: space-between;
+  padding: 0 0.4em 0 0.4em;
+  margin-bottom: 0.2em;
 }
-
+.header .theme .switch-container .switch {
+  width: 100%;
+  height: 35%;
+  background-color: var(--darkDesaturatedBlue-tggleKeypad);
+  border-radius: 1.7em;
+  box-sizing: border-box;
+  padding: 0.4em;
+  display: flex;
+  align-items: center;
+}
+.header .theme .switch-container .switch div {
+  width: 25%;
+  height: 97%;
+  background-color: var(--redBTN);
+  border-radius: 50%;
+}
 /*SCREEN*/
 .screen {
   width: 100%;
@@ -91,13 +154,22 @@
 .keypad {
   border-radius: 0.6em;
   height: 85%;
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  /* display: grid;
   grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%; */
 }
+
 .keypad > button {
+  flex: 1 0 16%;
   margin: 0.9em 1.8em 0.9em 1.8em;
-  border-radius: 0.4em;
+  border-radius: 0.8em;
   border: none;
   font-family: var(--spartanFont);
+  position: relative;
+  padding-top: 0.4em;
+}
+.keypad button > h1 {
+  font-size: 270%;
 }
