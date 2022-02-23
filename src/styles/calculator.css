@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  /*dvd start*/
+  --darkDesaturatedBlue-mainBckground: hsl(222, 26%, 31%);
+  --darkDesaturatedBlue-tggleKeypad: hsl(223, 31%, 20%);
+  --darkDesaturatedBlue-screenBckground: hsl(224, 36%, 15%);
+  /*Text*/
+  --darkGrayishBlue: hsl(221, 14%, 31%);
+  /*Font*/
+  --spartanFont: 'Spartan', sans-serif;
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+/*Manejo de colores*/
+.dvd-mainBack {
+  background-color: var(--darkDesaturatedBlue-mainBckground) !important;
+}
+.dvd-tggleKeypad {
+  background-color: var(--darkDesaturatedBlue-tggleKeypad) !important;
+}
+.dvd-screenBckground {
+  background-color: var(--darkDesaturatedBlue-screenBckground) !important;
+}
+.text-white {
+  color: white !important;
+}
+.text-white {
+  color: Var(--darkGrayishBlue);
+}
+.text-darkGrayishBlue {
+  color: Var(--darkGrayishBlue);
+}
+
+.calculator-container {
+  max-width: 1440px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  font-family: var(--spartanFont);
+  width: 650px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  width: 100%;
+  height: 15%;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+}
+.header .theme {
+  display: flex;
+}
+.header .theme .switch-container {
+  display: flex;
+  flex-direction: column;
+}
+.header .theme .numbers {
+  display: flex;
+}
+
+/*SCREEN*/
+.screen {
+  width: 100%;
+  height: 30%;
+  border-radius: 0.6em;
+  box-sizing: border-box;
+  padding: 1.5em 1em 1.5em 1em;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 180%;
+  margin-bottom: 1.5em;
+}
+.keypad {
+  border-radius: 0.6em;
+  height: 85%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+}
+.keypad > button {
+  margin: 0.9em 1.8em 0.9em 1.8em;
+  border-radius: 0.4em;
+  border: none;
+  font-family: var(--spartanFont);
+}
