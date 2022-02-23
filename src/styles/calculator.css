@@ -82,8 +82,8 @@
 
 .calculator {
   font-family: var(--spartanFont);
-  width: 650px;
-  height: 800px;
+  width: 560px;
+  height: 820px;
   display: flex;
   flex-direction: column;
 }
@@ -148,28 +148,71 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 180%;
+  font-size: 150%;
   margin-bottom: 1.5em;
 }
 .keypad {
   border-radius: 0.6em;
-  height: 85%;
+  height: 90%;
   display: flex;
   flex-wrap: wrap;
-  /* display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 20% 20% 20% 20% 20%; */
+  box-sizing: border-box;
+  padding: 1em;
 }
 
 .keypad > button {
+  height: 14%;
   flex: 1 0 16%;
-  margin: 0.9em 1.8em 0.9em 1.8em;
   border-radius: 0.8em;
   border: none;
   font-family: var(--spartanFont);
   position: relative;
   padding-top: 0.4em;
+  cursor: pointer;
+  margin: 1em;
 }
 .keypad button > h1 {
   font-size: 270%;
+}
+
+@media all and (max-width: 649px) {
+  .calculator-container {
+    box-sizing: border-box;
+    padding: 1em;
+  }
+  .calculator {
+    font-family: var(--spartanFont);
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .header {
+    height: 15%;
+    align-content: flex-start;
+  }
+  .header .theme {
+    width: 40%;
+  }
+  .header .theme .switch-container .switch {
+    width: 100%;
+    height: 35%;
+    padding: 0.3em;
+  }
+  .header .theme .switch-container .switch > div {
+      width: 20%;
+  }
+  .screen {
+    height: 15%;
+    margin-bottom: 1em;
+  }
+  .screen > h1 {
+    font-size: 120%;
+  }
+  .keypad > button {
+    flex: 1 0 20%;
+    margin: 0.4em;
+    height: 17%;
+    font-size: 90%;
+  }
 }

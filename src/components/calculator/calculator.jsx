@@ -79,7 +79,7 @@ const Calculator = () => {
             <h2>RESET</h2>
           </button>
           <button className="text-darkGrayishBlue border-bottom-theme1-key2 btn-back-theme12 text-white">
-            <h1>=</h1>
+            <h2>=</h2>
           </button>
         </div>
       </div>
