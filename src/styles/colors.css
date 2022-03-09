@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+}
+:root {
+  /*Font*/
+  --spartanFont: 'Spartan', sans-serif;
+  /*THEME 1*/
+  /*dvd start*/
+  --darkDesaturatedBlue-mainBckground: hsl(222, 26%, 31%);
+  --darkDesaturatedBlue-tggleKeypad: hsl(223, 31%, 20%);
+  --darkDesaturatedBlue-screenBckground: hsl(224, 36%, 15%);
+  /*backgroundButtons REPOSO*/
+  --desaturatedDarkBlueBTN: linear-gradient(
+    to bottom,
+    rgb(142, 191, 255),
+    rgb(33, 60, 109)
+  );
+  --redBTN: linear-gradient(to bottom, rgb(255, 133, 133), rgb(109, 33, 33));
+  --lightGrayishOrangeBTN: linear-gradient(
+    to bottom,
+    rgb(238, 238, 238),
+    rgb(98, 107, 124)
+  );
+  /*Text*/
+  --darkGrayishBlue: hsl(0, 0%, 27%);
+  /*END THEME 1*/
+
+  /*THEME 2*/
+  --lightGray-mainBckground: hsl(0, 0%, 90%);
+  --grayishRed-tggleKeypad: hsl(0, 5%, 79%);
+  --veryLightGray-screenBckground: hsl(0, 0%, 75%);
+  --darkCyanBTN: linear-gradient(
+    to bottom,
+    hsl(185, 80%, 64%),
+    hsl(185, 58%, 25%)
+  );
+  --orangeBTN: linear-gradient(
+    to bottom,
+    hsl(25, 100%, 70%),
+    hsl(25, 98%, 40%)
+  );
+  --lightGrayishYellowBTN: linear-gradient(
+    to bottom,
+    hsl(45, 7%, 91%),
+    hsl(45, 7%, 34%)
+  );
+  /*TEXT*/
+  --veryDarkGrayishYellow: hsl(60, 10%, 19%);
+  /*END THEME 2*/
+
+  /*THEME 3*/
+  --veryDarkViolet-mainBckground: hsl(268, 75%, 9%);
+  --veryDarkViolet-tggleKeypad: hsl(268, 71%, 12%);
+  --veryDarkViolet-screenBckground: hsl(268, 71%, 12%);
+  --pureCyan: linear-gradient(
+    to bottom,
+    hsl(176, 100%, 64%),
+    hsl(176, 100%, 44%)
+  );
+  --darkVioletBTN: linear-gradient(
+    to bottom,
+    hsl(281, 89%, 56%),
+    hsl(281, 89%, 26%)
+  );
+  --veryDarkVyoletBTN: linear-gradient(
+    to bottom,
+    hsl(268, 47%, 41%),
+    hsl(268, 47%, 17%)
+  );
+  /*TEXT*/
+  --lightYellow: hsl(52, 100%, 62%);
+  --veryDarkBlue: hsl(198, 20%, 13%);
+  /*END THEME 3*/
+}
+#root {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.text-white {
+  color: white !important;
+}
+/* THEME 1*/
+/*Manejo de colores*/
+.dvd-mainBack {
+  background-color: var(--darkDesaturatedBlue-mainBckground) !important;
+  transition: all 0.2s;
+}
+.dvd-tggleKeypad {
+  background-color: var(--darkDesaturatedBlue-tggleKeypad) !important;
+  transition: all 0.2s
+}
+.dvd-screenBckground {
+  background-color: var(--darkDesaturatedBlue-screenBckground) !important;
+}
+.text-darkGrayishBlue {
+  color: Var(--darkGrayishBlue) !important;
+}
+
+/*BACKGROUND BUTTONS THEME 1*/
+.btn-back-theme10 {
+  background: var(--lightGrayishOrangeBTN);
+}
+.btn-back-theme11 {
+  background: var(--desaturatedDarkBlueBTN);
+}
+.btn-back-theme12 {
+  background: var(--redBTN);
+  transition: all 0.2s
+}
+/* END THEME 1*/
+
+/* THEME 2*/
+/*BACKGROUND BUTTONS THEME 2*/
+.t2-mainBack {
+  background-color: var(--lightGray-mainBckground) !important;
+  transition: all 0.2s;
+}
+.t2-tggleKeypad {
+  background-color: var(--grayishRed-tggleKeypad) !important;
+  transition: all 0.2s
+}
+.t2-screenBckground {
+  background-color: var(--veryLightGray-screenBckground) !important;
+}
+.btn-back-theme20 {
+  background: var(--lightGrayishYellowBTN);
+}
+.btn-back-theme21 {
+  background: var(--darkCyanBTN);
+}
+.btn-back-theme22 {
+  background: var(--orangeBTN);
+  transition: all 0.2s
+}
+/*TEXT*/
+.text-darkGrayishYellow {
+  color: Var(--veryDarkGrayishYellow) !important;
+}
+/* END THEME 2*/
+
+/* THEME 3*/
+/*BACKGROUND BUTTONS THEME 3*/
+.t3-mainBack {
+  background-color: var(--veryDarkViolet-mainBckground) !important;
+  transition: all 0.2s;
+}
+.t3-tggleKeypad {
+  background-color: var(--veryDarkViolet-tggleKeypad) !important;
+  transition: all 0.2s
+}
+.t3-screenBckground {
+  background-color: var(--veryDarkViolet-screenBckground) !important;
+}
+.btn-back-theme30 {
+  background: var(--veryDarkVyoletBTN);
+}
+.btn-back-theme31 {
+  background: var(--darkVioletBTN);
+}
+.btn-back-theme32 {
+  background: var(--pureCyan);
+  transition: all 0.2s
+}
+.text-darkGrayishYellow {
+  color: Var(--veryDarkGrayishYellow) !important;
+}
+/*TEXT*/
+.light-yellow {
+  color: var(--lightYellow) !important;
+}
+.very-dark-blue {
+  color: var(--veryDarkBlue) !important;
+}
+/* END THEME 3*/

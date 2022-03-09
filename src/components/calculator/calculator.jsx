@@ -1,86 +1,57 @@
-import '../../styles/calculator.css'
+import { useState, useReducer, useEffect } from 'react'
+import '../../styles/colors.css'
+import '../../styles/structure.css'
+
+// Components
+import Button from '../button/button'
+import ToggleColor from '../toggleColor/toggleColor'
+
+// Reducer
+import calcReducer from '../../reducer/calcReducer'
+
+// Config Buttons
+import { configButtons } from './configButtons'
+
+// Themes
+import { themes } from '../themes/themes'
+
 const Calculator = () => {
+  const [displayContent, dispatch] = useReducer(calcReducer, '')
+
+  const [theme, setTheme] = useState({
+    state: 1,
+    direction: 'to left',
+  })
+
   return (
-    <div className="calculator-container dvd-mainBack">
+    <div
+      className={`calculator-container ${themes()[theme.state - 1].mainBack}`}
+    >
       <div className="calculator">
-        <div className="header text-white">
+        <div className={`header ${themes()[theme.state - 1].textHeader}`}>
           <div className="calc">
             <h1>calc</h1>
           </div>
-          <div className="theme">
-            <div className="title-theme">
-              <h5>THEME</h5>
-            </div>
-            <div className="switch-container">
-              <div className="numbers">
-                <p>1</p>
-                <p>2</p>
-                <p>3</p>
-              </div>
-              <div className="switch">
-                <div></div>
-              </div>
-            </div>
-          </div>
+          <ToggleColor theme={theme} setTheme={setTheme} />
         </div>
-        <div className="screen text-white dvd-screenBckground">
-          <h1>399,981</h1>
+        <div
+          className={`screen ${themes()[theme.state - 1].textHeader}  ${
+            themes()[theme.state - 1].screenBack
+          }`}
+        >
+          <h1>{displayContent ? displayContent : '0'} </h1>
         </div>
-        <div className="keypad dvd-tggleKeypad">
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>7</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>8</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>9</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key1 btn-back-theme11 text-white">
-            <h2>DEL</h2>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>4</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>5</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>6</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>+</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>1</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>2</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>3</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>-</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>.</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>0</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>/</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key0 btn-back-theme10">
-            <h1>x</h1>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key1 btn-back-theme11 text-white">
-            <h2>RESET</h2>
-          </button>
-          <button className="text-darkGrayishBlue border-bottom-theme1-key2 btn-back-theme12 text-white">
-            <h2>=</h2>
-          </button>
+        <div className={`keypad ${themes()[theme.state - 1].tggleKeypad}`}>
+          {configButtons(dispatch, theme)?.map((config, index) => {
+            return (
+              <Button
+                key={index}
+                className={config[0]}
+                content={config[1]}
+                fn={config[2]}
+              />
+            )
+          })}
         </div>
       </div>
     </div>
